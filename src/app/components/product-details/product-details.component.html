@@ -1,0 +1,69 @@
+<div class="w-full flex justify-center bg-gray-50 py-6">
+  <div class="w-full max-w-[1200px] bg-white shadow-md p-4 min-h-screen relative">
+    <!-- Header -->
+    <div class="bg-[#ffd41c] px-4 py-2 flex items-center justify-between rounded-md">
+      <button>
+        <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <h1 class="text-center font-semibold text-base text-black">Product Details</h1>
+      <button>
+        <svg class="w-5 h-5 text-black rotate-180" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+    </div>
+
+    <!-- Product Image and Favorite -->
+    <div class="mt-4 relative">
+      <img [src]="productDetails.image_url" alt="Cheese Burger"
+           class="w-full h-[300px] md:h-[400px] lg:h-[450px] object-cover rounded-lg border-2 border-[#ffd41c]">
+      <button class="absolute top-2 right-2 bg-white p-2 rounded-full shadow">
+        ❤️
+      </button>
+    </div>
+
+    <!-- Product Info -->
+    <div class="mt-4">
+      <div class="flex justify-between items-center">
+        <h2 class="text-xl font-semibold">{{productDetails.name}}</h2>
+        <p class="text-xl font-medium">₹{{productDetails.price}}</p>
+      </div>
+      <p class="text-green-600 text-sm mt-1">In Stock</p>
+      <div class="flex text-yellow-500 mt-1 text-lg">
+        ★ ★ ★ ★ ★
+      </div>
+    </div>
+
+    <!-- Quantity Selector -->
+    <div class="mt-6">
+      <h3 class="font-semibold text-base">Product Quantity</h3>
+      <div class="flex items-center mt-2 space-x-4">
+          <button class="bg-[#ffd41c] px-4 py-2 rounded text-lg font-bold">−</button>
+          <span class="text-lg">1</span>
+          <button class="bg-[#ffd41c] px-4 py-2 rounded text-lg font-bold">+</button>
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="mt-6">
+      <h3 class="font-semibold text-base">Product Details</h3>
+      <p class="text-gray-600 text-sm mt-1">
+       {{productDetails.description}}
+        <a href="#" class="text-blue-500">Read More</a>
+      </p>
+    </div>
+
+    <!-- Related Products -->
+    <div class="mt-8">
+      <h3 class="font-semibold text-base mb-3">Related Products</h3>
+      <div class="flex space-x-3 overflow-x-auto">
+        <img src="https://foodish-api.com/images/pasta/pasta12.jpg" class="w-20 h-20 rounded-md object-cover border" />
+        <img src="https://foodish-api.com/images/pizza/pizza6.jpg" class="w-20 h-20 rounded-md object-cover border" />
+        <img src="https://foodish-api.com/images/burger/burger7.jpg" class="w-20 h-20 rounded-md object-cover border" />
+        <img src="https://foodish-api.com/images/samosa/samosa9.jpg" class="w-20 h-20 rounded-md object-cover border" />
+      </div>
+    </div>
+
+    
+  </div>
+</div>

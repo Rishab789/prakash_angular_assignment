@@ -1,0 +1,27 @@
+<header class="bg-[#ffd41c] p-4 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    
+    <!-- Hamburger for Mobile -->
+    <button class="block lg:hidden">
+      <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Center logo (optional, hidden on mobile for this layout) -->
+    <div class="hidden lg:block cursor-pointer" routerLink="">
+      <h1 class="text-xl font-bold text-gray-800">FoodExpress</h1>
+    </div>
+
+    <!-- Cart Icon (Always visible) -->
+    <button class="text-gray-800 relative" routerLink="cart">
+      <div class="bg-white h-7 w-7 rounded-full absolute -top-5 -right-3" *ngIf="itemLength>0">{{itemLength}}</div>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m14-9l2 9M9 21a1 1 0 100-2 1 1 0 000 2zm6 0a1 1 0 100-2 1 1 0 000 2z" />
+      </svg>
+    </button>
+
+  </div>
+</header>

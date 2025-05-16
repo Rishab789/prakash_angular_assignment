@@ -37,16 +37,10 @@ export class CartComponent implements OnInit {
   }
 
   decreaseQty(item: any): void {
-    const index = this.cartItems.findIndex((i) => i.id === item.id);
-    if (index !== -1) {
-      this.cartItems[index].quantity--;
-
-      if (this.cartItems[index].quantity < 1) {
-        this.cartItems.splice(index, 1); // Remove from array
-      }
-
-      this.updateCart();
-    }
+    this.cartservice.updateQuantity(item.id, -1); // ✅ update service
+    const updatedCart = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    this.cartItems = updatedCart;
+    this.calculateTotals();
   }
 
   removeItem(item: any): void {

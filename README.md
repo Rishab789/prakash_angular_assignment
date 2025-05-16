@@ -1,27 +1,49 @@
-# Assignment
+# Live Demo
+https://prakash-angular-assignment-rb5g-git-main-rishab789s-projects.vercel.app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+# Tech Stack
+Frontend Framework: Angular 15+
 
-## Development server
+CSS Framework: Tailwind CSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+State Management: BehaviorSubject via Angular Services
 
-## Code scaffolding
+Local Storage: For cart and state persistence
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Routing: Angular Router
 
-## Build
+Testing: Jasmine + Karma (basic unit tests included)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Features
+✅ View food items with image, price, and description
 
-## Running unit tests
+✅ Add/Remove items to/from cart
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+✅ Increase/Decrease item quantity in cart
 
-## Running end-to-end tests
+✅ Cart state stored in localStorage
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+✅ Total price and discount calculation
 
-## Further help
+✅ Dynamic cart count in header
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+✅ Checkout button (prints cart data in console)
+
+✅ Mobile-responsive UI
+
+✅ Angular service to sync cart state across components
+
+# Unit Testing
+Basic unit tests are set up using Karma and Jasmine.
+
+
+# Tests cover
+Cart service logic (add, remove, update)
+
+Component state updates
+
+Local storage syncing
+
+
+# Author
+Prakash Chandra Bera

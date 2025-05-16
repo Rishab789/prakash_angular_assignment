@@ -1,5 +1,5 @@
 # Live Demo
-https://prakash-angular-assignment-rb5g-git-main-rishab789s-projects.vercel.app/cart
+https://prakash-angular-assignment-rb5g-git-main-rishab789s-projects.vercel.app
 
 # Tech Stack
 Frontend Framework: Angular 15+

@@ -27,7 +27,7 @@ describe('CartComponent', () => {
 
     fixture = TestBed.createComponent(CartComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges(); // triggers ngOnInit
+    fixture.detectChanges();
   });
 
   it('should create the component', () => {
@@ -62,7 +62,7 @@ describe('CartComponent', () => {
 
   it('should remove item if quantity becomes 0 on decrease', () => {
     const item = component.cartItems[1]; // quantity = 1
-    component.decreaseQty(item); // should remove
+    component.decreaseQty(item);
     expect(component.cartItems.length).toBe(1);
     expect(component.cartItems.find((i) => i.id === 2)).toBeUndefined();
   });

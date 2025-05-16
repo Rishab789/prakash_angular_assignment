@@ -20,12 +20,4 @@ export class HeaderComponent implements OnInit {
   updateCartCount(cart: any[]) {
     this.itemLength = cart.reduce((acc, item) => acc + item.quantity, 0);
   }
-
-  // updateCartCount(): void {
-  //   const cart = JSON.parse(localStorage.getItem('cartItems') || '[]');
-  //   this.itemLength = cart.reduce(
-  //     (acc: number, item: any) => acc + item.quantity,
-  //     0
-  //   );
-  // }
 }

@@ -26,18 +26,17 @@ export class CartComponent implements OnInit {
       (acc, item) => acc + item.price * item.quantity,
       0
     );
-    this.discount = 0; // Add logic if discount applies
+    this.discount = 0;
     this.total = this.subtotal - this.discount;
   }
 
-  // For future features:
   increaseQty(item: any): void {
     item.quantity++;
     this.updateCart();
   }
 
   decreaseQty(item: any): void {
-    this.cartservice.updateQuantity(item.id, -1); // ✅ update service
+    this.cartservice.updateQuantity(item.id, -1);
     const updatedCart = JSON.parse(localStorage.getItem('cartItems') || '[]');
     this.cartItems = updatedCart;
     this.calculateTotals();

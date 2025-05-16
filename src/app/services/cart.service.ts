@@ -14,7 +14,7 @@ export class CartService {
 
   private updateCart(cart: any[]): void {
     localStorage.setItem('cartItems', JSON.stringify(cart));
-    this.cartItems.next(cart); // ✅ notify subscribers
+    this.cartItems.next(cart);
   }
 
   addToCart(product: any): void {
@@ -35,7 +35,7 @@ export class CartService {
     let cart = this.getCartFromStorage().filter(
       (item) => item.id !== productId
     );
-    this.updateCart(cart); // ✅ triggers update
+    this.updateCart(cart);
   }
 
   updateQuantity(productId: number, change: number): void {
@@ -47,7 +47,7 @@ export class CartService {
       if (cart[index].quantity <= 0) {
         cart.splice(index, 1);
       }
-      this.updateCart(cart); // ✅ triggers update
+      this.updateCart(cart);
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,6 +11,8 @@ export class CartComponent implements OnInit {
   subtotal: number = 0;
   discount: number = 0;
   total: number = 0;
+
+  constructor(private cartservice: CartService) {}
 
   ngOnInit(): void {
     const cartData = localStorage.getItem('cartItems');
@@ -48,6 +51,7 @@ export class CartComponent implements OnInit {
 
   removeItem(item: any): void {
     this.cartItems = this.cartItems.filter((i) => i.id !== item.id);
+    this.cartservice.removeFromCart(item.id);
     this.updateCart();
   }
 

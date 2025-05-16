@@ -39,7 +39,7 @@
     <div class="px-4 py-6 border-t mt-4">
   <div class="flex justify-between text-sm mb-2">
     <span class="font-medium">Subtotal</span>
-    <span>₹{{ subtotal }}</span>
+    <span>₹{{ subtotal |number : '1.2-2' }}</span>
   </div>
   <div class="flex justify-between text-sm mb-2">
     <span class="font-medium">Discount</span>
@@ -47,7 +47,7 @@
   </div>
   <div class="flex justify-between text-lg font-bold text-yellow-500 border-t pt-2">
     <span>Total</span>
-    <span>₹{{ total }}</span>
+    <span>₹{{ total|number : '1.2-2' }}</span>
   </div>
 
   <button  (click)="buyNow()" class="w-full mt-4 bg-yellow-400 text-black py-3 rounded-md font-bold text-lg hover:bg-yellow-500">

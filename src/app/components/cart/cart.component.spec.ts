@@ -11,7 +11,6 @@ describe('CartComponent', () => {
   ];
 
   beforeEach(() => {
-    // Mock localStorage
     spyOn(localStorage, 'getItem').and.callFake((key: string) => {
       if (key === 'cartItems') {
         return JSON.stringify(mockCartItems);

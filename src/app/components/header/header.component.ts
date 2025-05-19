@@ -13,11 +13,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.cartItems$.subscribe((items) => {
-      this.itemLength = items.reduce((acc, item) => acc + item.quantity, 0);
+      this.itemLength = items.length;
     });
   }
 
-  updateCartCount(cart: any[]) {
-    this.itemLength = cart.reduce((acc, item) => acc + item.quantity, 0);
-  }
+  // updateCartCount(cart: any[]) {
+  //   console.log('clalling');
+  //   this.itemLength = cart.reduce((acc, item) => acc + item.quantity, 0);
+  // }
 }

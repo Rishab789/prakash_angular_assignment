@@ -15,9 +15,9 @@ export class CartComponent implements OnInit {
   constructor(private cartservice: CartService) {}
 
   ngOnInit(): void {
-    const cartData = localStorage.getItem('cartItems');
-    this.cartItems = cartData ? JSON.parse(cartData) : [];
-
+    this.cartservice.cartItems$.subscribe((p) => {
+      this.cartItems = p;
+    });
     this.calculateTotals();
   }
 
@@ -31,8 +31,10 @@ export class CartComponent implements OnInit {
   }
 
   increaseQty(item: any): void {
-    item.quantity++;
-    this.updateCart();
+    this.cartservice.updateQuantity(item.id, 1);
+    const updatedCart = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    this.cartItems = updatedCart;
+    this.calculateTotals();
   }
 
   decreaseQty(item: any): void {
@@ -43,14 +45,7 @@ export class CartComponent implements OnInit {
   }
 
   removeItem(item: any): void {
-    this.cartItems = this.cartItems.filter((i) => i.id !== item.id);
     this.cartservice.removeFromCart(item.id);
-    this.updateCart();
-  }
-
-  updateCart(): void {
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
-    this.calculateTotals();
   }
 
   buyNow(): void {
